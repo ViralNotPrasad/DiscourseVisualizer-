@@ -9,8 +9,6 @@ last_time = 0
 
 @app.route("/home")
 def home():
-    global timelist
-    global last_time
     titles = []
     bodies = []
     comments = []
@@ -35,7 +33,7 @@ def home():
 
             if lcount == 5:
                 break;
-
+    timecheck("set")
     return render_template(
         'feed.html', l=len(titles), labels=labels, topics=topics, titles=titles, bodies=bodies, comments=comments)
 
@@ -43,17 +41,24 @@ def home():
 def root():
     return render_template("form.html")
 
-@app.route("/home/click/<string:topic>/<int:label>", methods=['POST, GET'])
-def btnclk():
-    global last_time
-    global timelist
-    now_time = time.time()
-    delta = now_time - last_time
-    last_time = now_time
+@app.route("/home/click/<string:topic>/<int:label>")
+def btnclk(topic, label):
+    timecheck("delta", topic, label)
     return redirect(url_for('home'))
 
-
-
+def timecheck(action, topic=None, label=None):
+    global timelist
+    global last_time
+    if action == "set":
+        last_time = time.time()
+        return
+    elif action == "delta":
+        now_time = time.time()
+        delta = now_time - last_time
+        last_time = now_time
+    timelist.append((topic, label, delta))
+    print (timelist)
+    return
 
 @app.route('/form', methods=['POST', 'GET'])
 def form():
@@ -61,17 +66,12 @@ def form():
     if request.method == 'POST':
         result = request.form
         print(result)
-    last_time = time.time()
+    timecheck("set")
     return redirect(url_for("home"))
 
 @app.route("/similar/<string:topic>/<int:label>/<int:type>")
 def similar(topic, type, label):
-    global timelist
-    global last_time
-    now_time = time.time()
-    delta = now_time - last_time
-    last_time = now_time
-    timelist.append((topic, label, delta))
+    timecheck("delta", topic, label)
     titles = []
     bodies = []
     comments = []
@@ -79,15 +79,12 @@ def similar(topic, type, label):
     i = 0
     lcount = 0
     label = int(label)
-    print(label)
     if type == 1:  #if data is a comment
         label = abs(6 - label)
-    print(label)
     for idx in datadict["topics"][topic]:
         label_new = int(datadict["labels"][topic][i])
         body = datadict["bodies"][idx]
         i+=1
-        print("label_new:", label_new)
 
         if label_new == label and len(body) <= 2000:
             titles.append(datadict["titles"][idx])

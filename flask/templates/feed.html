@@ -115,7 +115,7 @@
                     {{ bodies[p] }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form type="button" class="btn btn-secondary" action="{{ url_for('btnclk', topic=topics[p], label=labels[p])  }}" data-dismiss="modal">Close</form>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
                     {{ comments[p] }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form type="button" class="btn btn-secondary" action="{{ url_for('btnclk', topic=topics[p], label=labels[p])  }}" data-dismiss="modal">Close</form>
                 </div>
             </div>
         </div>
@@ -145,6 +145,9 @@
                 <div class="modal-body">
                     {{ comments[p] }}
                 </div>
+                <div class="modal-footer">
+                    <form type="button" class="btn btn-secondary" action="{{ url_for('btnclk', topic=topics[p], label=labels[p])  }}" data-dismiss="modal">Close</form>
+                </div>
             </div>
         </div>
     </div>
@@ -158,7 +161,7 @@
                     {{ bodies[p] }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <form type="button" class="btn btn-secondary" action="{{ url_for('btnclk', topic=topics[p], label=labels[p])  }}" data-dismiss="modal">Close</form>
                 </div>
             </div>
         </div>
