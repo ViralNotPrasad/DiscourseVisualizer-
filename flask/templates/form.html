@@ -1,10 +1,10 @@
 <html>
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<title>Reader Survey - Agree2Disagree</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <title>Reader Survey - Agree2Disagree</title>
 </head>
 
 <body bgcolor="#C0C0C0">
@@ -18,10 +18,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Exit Survey</a>
+        <a class="nav-link" href="https://goo.gl/forms/yCyHS66ilLNk12Xv2">Exit Survey</a>
       </li>
     </ul>
   </div>
@@ -29,582 +29,582 @@
 
 <div class="container">
 
-<br>
-<br>
-
-<form>
-    <div class="form-group">
-    <label for="formGroupExampleInput">Please Enter Your Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
-  </div>
+  <br>
   <br>
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+  <form action = "{{ url_for('form') }}" method = "POST">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Please Enter Your Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
+    </div>
+    <br>
 
-  <p>Gender:</p>
-  <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Female
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Male
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-  <label class="form-check-label" for="exampleRadios3">
-    Prefer not to say
-  </label>
-</div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
 
-
-  <p>Please indicate your agreement with the statements below, 1 being Strongly Agree and 5 being Strongly Disagree</p>
-
-<p>Trump's stance on immigration is over-exaggerated by the media and not actually that extreme.</p>
-  <div class="form-check form-check-inline">
-
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option1">
-  <label class="form-check-label" for="inlineRadio4">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
-  <label class="form-check-label" for="inlineRadio5">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option3">
-  <label class="form-check-label" for="inlineRadio6">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option4">
-  <label class="form-check-label" for="inlineRadio7">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option5">
-  <label class="form-check-label" for="inlineRadio8">5</label>
-</div>
-
-<br>
-<br>
-
-<p>I think using the events of the Orlando shooting as a reason for coming out publicly on social media is in bad taste and only serves as a cry for attention.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="option1">
-  <label class="form-check-label" for="inlineRadio9">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="option2">
-  <label class="form-check-label" for="inlineRadio10">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="option3">
-  <label class="form-check-label" for="inlineRadio11">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="option4">
-  <label class="form-check-label" for="inlineRadio12">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio13" value="option5">
-  <label class="form-check-label" for="inlineRadio13">5</label>
-</div>
-
-<br>
-<br>
-
-<p>If a man wants a woman he impregnated to get an abortion he shouldn't have to pay child support.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio14" value="option1">
-  <label class="form-check-label" for="inlineRadio14">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio15" value="option2">
-  <label class="form-check-label" for="inlineRadio15">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio16" value="option3">
-  <label class="form-check-label" for="inlineRadio16">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio17" value="option4">
-  <label class="form-check-label" for="inlineRadio17">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio18" value="option5">
-  <label class="form-check-label" for="inlineRadio18">5</label>
-</div>
-
-<br>
-<br>
-
-<p>A temporary ban on Muslim immigration is a good idea</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio19" value="option1">
-  <label class="form-check-label" for="inlineRadio19">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio20" value="option2">
-  <label class="form-check-label" for="inlineRadio20">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio21" value="option3">
-  <label class="form-check-label" for="inlineRadio21">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio22" value="option4">
-  <label class="form-check-label" for="inlineRadio22">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio23" value="option5">
-  <label class="form-check-label" for="inlineRadio23">5</label>
-</div>
-
-<br>
-<br>
-
-<p>There is no student loan 'bubble'</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio24" value="option1">
-  <label class="form-check-label" for="inlineRadio24">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio25" value="option2">
-  <label class="form-check-label" for="inlineRadio25">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio26" value="option3">
-  <label class="form-check-label" for="inlineRadio26">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio27" value="option4">
-  <label class="form-check-label" for="inlineRadio27">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio28" value="option5">
-  <label class="form-check-label" for="inlineRadio28">5</label>
-</div>
+    <p>Gender:</p>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Female
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+        Male
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+      <label class="form-check-label" for="exampleRadios3">
+        Prefer not to say
+      </label>
+    </div>
 
 
-<br>
-<br>
+    <p>Please indicate your agreement with the statements below, 1 being Strongly Agree and 5 being Strongly Disagree</p>
 
-<p>The Android smartphone market at the present time is objectively far superior to any current iteration of Apple devices.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio29" value="option1">
-  <label class="form-check-label" for="inlineRadio29">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio30" value="option2">
-  <label class="form-check-label" for="inlineRadio30">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio31" value="option3">
-  <label class="form-check-label" for="inlineRadio31">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio32" value="option4">
-  <label class="form-check-label" for="inlineRadio32">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio33" value="option5">
-  <label class="form-check-label" for="inlineRadio33">5</label>
-</div>
+    <p>Trump's stance on immigration is over-exaggerated by the media and not actually that extreme.</p>
+    <div class="form-check form-check-inline">
 
-<br>
-<br>
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option1">
+      <label class="form-check-label" for="inlineRadio4">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
+      <label class="form-check-label" for="inlineRadio5">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option3">
+      <label class="form-check-label" for="inlineRadio6">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option4">
+      <label class="form-check-label" for="inlineRadio7">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option5">
+      <label class="form-check-label" for="inlineRadio8">5</label>
+    </div>
 
-<p>There is no acceptable stance on abortion besides being completely against it except to save the life of the mother, or being completely supportive of it without any restrictions.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio34" value="option1">
-  <label class="form-check-label" for="inlineRadio34">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio35" value="option2">
-  <label class="form-check-label" for="inlineRadio35">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio36" value="option3">
-  <label class="form-check-label" for="inlineRadio36">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio37" value="option4">
-  <label class="form-check-label" for="inlineRadio37">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio38" value="option5">
-  <label class="form-check-label" for="inlineRadio38">5</label>
-</div>
+    <br>
+    <br>
 
-<br>
-<br>
+    <p>I think using the events of the Orlando shooting as a reason for coming out publicly on social media is in bad taste and only serves as a cry for attention.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="option1">
+      <label class="form-check-label" for="inlineRadio9">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="option2">
+      <label class="form-check-label" for="inlineRadio10">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="option3">
+      <label class="form-check-label" for="inlineRadio11">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="option4">
+      <label class="form-check-label" for="inlineRadio12">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio13" value="option5">
+      <label class="form-check-label" for="inlineRadio13">5</label>
+    </div>
 
-<p>Jailbroken iPhone > Android phone</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio39" value="option1">
-  <label class="form-check-label" for="inlineRadio39">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio40" value="option2">
-  <label class="form-check-label" for="inlineRadio40">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio41" value="option3">
-  <label class="form-check-label" for="inlineRadio41">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio42" value="option4">
-  <label class="form-check-label" for="inlineRadio42">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio43" value="option5">
-  <label class="form-check-label" for="inlineRadio43">5</label>
-</div>
+    <br>
+    <br>
 
-<br>
-<br>
+    <p>If a man wants a woman he impregnated to get an abortion he shouldn't have to pay child support.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio14" value="option1">
+      <label class="form-check-label" for="inlineRadio14">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio15" value="option2">
+      <label class="form-check-label" for="inlineRadio15">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio16" value="option3">
+      <label class="form-check-label" for="inlineRadio16">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio17" value="option4">
+      <label class="form-check-label" for="inlineRadio17">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio18" value="option5">
+      <label class="form-check-label" for="inlineRadio18">5</label>
+    </div>
 
-<p>Medical marijuana cardholders are lawful users of marijuana and can therefore legally purchase firearms according to the form filled out prior to sale.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio44" value="option1">
-  <label class="form-check-label" for="inlineRadio44">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio45" value="option2">
-  <label class="form-check-label" for="inlineRadio45">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio46" value="option3">
-  <label class="form-check-label" for="inlineRadio46">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio47" value="option4">
-  <label class="form-check-label" for="inlineRadio47">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio48" value="option5">
-  <label class="form-check-label" for="inlineRadio48">5</label>
-</div>
+    <br>
+    <br>
 
+    <p>A temporary ban on Muslim immigration is a good idea</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio19" value="option1">
+      <label class="form-check-label" for="inlineRadio19">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio20" value="option2">
+      <label class="form-check-label" for="inlineRadio20">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio21" value="option3">
+      <label class="form-check-label" for="inlineRadio21">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio22" value="option4">
+      <label class="form-check-label" for="inlineRadio22">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio23" value="option5">
+      <label class="form-check-label" for="inlineRadio23">5</label>
+    </div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<p>I believe that, on average, a college education is a worthwhile investment.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio49" value="option1">
-  <label class="form-check-label" for="inlineRadio49">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio50" value="option2">
-  <label class="form-check-label" for="inlineRadio50">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio51" value="option3">
-  <label class="form-check-label" for="inlineRadio51">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio52" value="option4">
-  <label class="form-check-label" for="inlineRadio52">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio53" value="option5">
-  <label class="form-check-label" for="inlineRadio53">5</label>
-</div>
-
-
-<br>
-<br>
-
-<p>The father should not have to give consent in order for a woman to have an abortion.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio54" value="option1">
-  <label class="form-check-label" for="inlineRadio24">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio55" value="option2">
-  <label class="form-check-label" for="inlineRadio55">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio56" value="option3">
-  <label class="form-check-label" for="inlineRadio56">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio57" value="option4">
-  <label class="form-check-label" for="inlineRadio57">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio58" value="option5">
-  <label class="form-check-label" for="inlineRadio58">5</label>
-</div>
-
-<br>
-<br>
-
-<p>Android/Linux will beat Apple & Microsoft in the Desktop/Laptop market.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio59" value="option1">
-  <label class="form-check-label" for="inlineRadio59">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio60" value="option2">
-  <label class="form-check-label" for="inlineRadio60">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio61" value="option3">
-  <label class="form-check-label" for="inlineRadio61">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio62" value="option4">
-  <label class="form-check-label" for="inlineRadio62">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio63" value="option5">
-  <label class="form-check-label" for="inlineRadio63">5</label>
-</div>
+    <p>There is no student loan 'bubble'</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio24" value="option1">
+      <label class="form-check-label" for="inlineRadio24">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio25" value="option2">
+      <label class="form-check-label" for="inlineRadio25">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio26" value="option3">
+      <label class="form-check-label" for="inlineRadio26">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio27" value="option4">
+      <label class="form-check-label" for="inlineRadio27">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio28" value="option5">
+      <label class="form-check-label" for="inlineRadio28">5</label>
+    </div>
 
 
+    <br>
+    <br>
 
-<br>
-<br>
+    <p>The Android smartphone market at the present time is objectively far superior to any current iteration of Apple devices.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio29" value="option1">
+      <label class="form-check-label" for="inlineRadio29">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio30" value="option2">
+      <label class="form-check-label" for="inlineRadio30">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio31" value="option3">
+      <label class="form-check-label" for="inlineRadio31">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio32" value="option4">
+      <label class="form-check-label" for="inlineRadio32">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio33" value="option5">
+      <label class="form-check-label" for="inlineRadio33">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>There is no acceptable stance on abortion besides being completely against it except to save the life of the mother, or being completely supportive of it without any restrictions.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio34" value="option1">
+      <label class="form-check-label" for="inlineRadio34">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio35" value="option2">
+      <label class="form-check-label" for="inlineRadio35">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio36" value="option3">
+      <label class="form-check-label" for="inlineRadio36">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio37" value="option4">
+      <label class="form-check-label" for="inlineRadio37">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio38" value="option5">
+      <label class="form-check-label" for="inlineRadio38">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>Jailbroken iPhone > Android phone</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio39" value="option1">
+      <label class="form-check-label" for="inlineRadio39">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio40" value="option2">
+      <label class="form-check-label" for="inlineRadio40">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio41" value="option3">
+      <label class="form-check-label" for="inlineRadio41">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio42" value="option4">
+      <label class="form-check-label" for="inlineRadio42">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio43" value="option5">
+      <label class="form-check-label" for="inlineRadio43">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>Medical marijuana cardholders are lawful users of marijuana and can therefore legally purchase firearms according to the form filled out prior to sale.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio44" value="option1">
+      <label class="form-check-label" for="inlineRadio44">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio45" value="option2">
+      <label class="form-check-label" for="inlineRadio45">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio46" value="option3">
+      <label class="form-check-label" for="inlineRadio46">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio47" value="option4">
+      <label class="form-check-label" for="inlineRadio47">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio48" value="option5">
+      <label class="form-check-label" for="inlineRadio48">5</label>
+    </div>
 
 
-<p>Unmotivated college students would be better off not going to college, and should pursue alternate forms of education.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio64" value="option1">
-  <label class="form-check-label" for="inlineRadio64">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio65" value="option2">
-  <label class="form-check-label" for="inlineRadio65">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio66" value="option3">
-  <label class="form-check-label" for="inlineRadio66">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio67" value="option4">
-  <label class="form-check-label" for="inlineRadio67">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio68" value="option5">
-  <label class="form-check-label" for="inlineRadio68">5</label>
-</div>
+    <br>
+    <br>
 
-<br>
-<br>
+    <p>I believe that, on average, a college education is a worthwhile investment.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio49" value="option1">
+      <label class="form-check-label" for="inlineRadio49">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio50" value="option2">
+      <label class="form-check-label" for="inlineRadio50">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio51" value="option3">
+      <label class="form-check-label" for="inlineRadio51">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio52" value="option4">
+      <label class="form-check-label" for="inlineRadio52">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio53" value="option5">
+      <label class="form-check-label" for="inlineRadio53">5</label>
+    </div>
 
-<p>I think that letting refugees into Canada and the USA en masse will have a negative impact on our culture.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio69" value="option1">
-  <label class="form-check-label" for="inlineRadio69">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio70" value="option2">
-  <label class="form-check-label" for="inlineRadio70">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio71" value="option3">
-  <label class="form-check-label" for="inlineRadio71">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio72" value="option4">
-  <label class="form-check-label" for="inlineRadio72">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio73" value="option5">
-  <label class="form-check-label" for="inlineRadio73">5</label>
-</div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<p>I think that people in college get more out of other things than an actual "Education".</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio74" value="option1">
-  <label class="form-check-label" for="inlineRadio74">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio75" value="option2">
-  <label class="form-check-label" for="inlineRadio75">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio76" value="option3">
-  <label class="form-check-label" for="inlineRadio76">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio77" value="option4">
-  <label class="form-check-label" for="inlineRadio77">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio78" value="option5">
-  <label class="form-check-label" for="inlineRadio78">5</label>
-</div>
+    <p>The father should not have to give consent in order for a woman to have an abortion.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio54" value="option1">
+      <label class="form-check-label" for="inlineRadio24">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio55" value="option2">
+      <label class="form-check-label" for="inlineRadio55">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio56" value="option3">
+      <label class="form-check-label" for="inlineRadio56">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio57" value="option4">
+      <label class="form-check-label" for="inlineRadio57">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio58" value="option5">
+      <label class="form-check-label" for="inlineRadio58">5</label>
+    </div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<p>It's extreme hyprocisy to be a vegan and have an "on demand" lifestyle-dictated abortion</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio79" value="option1">
-  <label class="form-check-label" for="inlineRadio79">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio80" value="option2">
-  <label class="form-check-label" for="inlineRadio80">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio81" value="option3">
-  <label class="form-check-label" for="inlineRadio81">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio82" value="option4">
-  <label class="form-check-label" for="inlineRadio82">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio83" value="option5">
-  <label class="form-check-label" for="inlineRadio83">5</label>
-</div>
+    <p>Android/Linux will beat Apple & Microsoft in the Desktop/Laptop market.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio59" value="option1">
+      <label class="form-check-label" for="inlineRadio59">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio60" value="option2">
+      <label class="form-check-label" for="inlineRadio60">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio61" value="option3">
+      <label class="form-check-label" for="inlineRadio61">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio62" value="option4">
+      <label class="form-check-label" for="inlineRadio62">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio63" value="option5">
+      <label class="form-check-label" for="inlineRadio63">5</label>
+    </div>
 
-<br>
-<br>
 
-<p>I think that it is perfectly acceptable for parents to refuse to fund their child's college education if the child's intended major (or grades) will not lead to employment.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio84" value="option1">
-  <label class="form-check-label" for="inlineRadio84">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio85" value="option2">
-  <label class="form-check-label" for="inlineRadio85">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio86" value="option3">
-  <label class="form-check-label" for="inlineRadio86">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio87" value="option4">
-  <label class="form-check-label" for="inlineRadio87">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio88" value="option5">
-  <label class="form-check-label" for="inlineRadio88">5</label>
-</div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<p>I'm a conservative that praises the 2nd amendment, but I believe wholeheartedly that background checks are a great idea to prevent mass shootings and slow the gun-related violence rate.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio89" value="option1">
-  <label class="form-check-label" for="inlineRadio89">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio90" value="option2">
-  <label class="form-check-label" for="inlineRadio90">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio91" value="option3">
-  <label class="form-check-label" for="inlineRadio91">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio92" value="option4">
-  <label class="form-check-label" for="inlineRadio92">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio93" value="option5">
-  <label class="form-check-label" for="inlineRadio93">5</label>
-</div>
 
-<br>
-<br>
+    <p>Unmotivated college students would be better off not going to college, and should pursue alternate forms of education.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio64" value="option1">
+      <label class="form-check-label" for="inlineRadio64">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio65" value="option2">
+      <label class="form-check-label" for="inlineRadio65">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio66" value="option3">
+      <label class="form-check-label" for="inlineRadio66">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio67" value="option4">
+      <label class="form-check-label" for="inlineRadio67">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio68" value="option5">
+      <label class="form-check-label" for="inlineRadio68">5</label>
+    </div>
 
-<p>The iPhone keyboard/texting is hands down better than Android.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio94" value="option1">
-  <label class="form-check-label" for="inlineRadio94">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio95" value="option2">
-  <label class="form-check-label" for="inlineRadio95">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio96" value="option3">
-  <label class="form-check-label" for="inlineRadio96">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio97" value="option4">
-  <label class="form-check-label" for="inlineRadio97">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio98" value="option5">
-  <label class="form-check-label" for="inlineRadio98">5</label>
-</div>
+    <br>
+    <br>
 
-<br>
-<br>
+    <p>I think that letting refugees into Canada and the USA en masse will have a negative impact on our culture.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio69" value="option1">
+      <label class="form-check-label" for="inlineRadio69">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio70" value="option2">
+      <label class="form-check-label" for="inlineRadio70">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio71" value="option3">
+      <label class="form-check-label" for="inlineRadio71">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio72" value="option4">
+      <label class="form-check-label" for="inlineRadio72">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio73" value="option5">
+      <label class="form-check-label" for="inlineRadio73">5</label>
+    </div>
 
-<p>There is nothing morally wrong with building a wall to keep out potential illegal immigrants</p>
-  <div class="form-check form-check-inline">
+    <br>
+    <br>
 
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio99" value="option1">
-  <label class="form-check-label" for="inlineRadio99">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio100" value="option2">
-  <label class="form-check-label" for="inlineRadio100">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio101" value="option3">
-  <label class="form-check-label" for="inlineRadio101">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio102" value="option4">
-  <label class="form-check-label" for="inlineRadio102">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio103" value="option5">
-  <label class="form-check-label" for="inlineRadio103">5</label>
-</div>
+    <p>I think that people in college get more out of other things than an actual "Education".</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio74" value="option1">
+      <label class="form-check-label" for="inlineRadio74">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio75" value="option2">
+      <label class="form-check-label" for="inlineRadio75">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio76" value="option3">
+      <label class="form-check-label" for="inlineRadio76">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio77" value="option4">
+      <label class="form-check-label" for="inlineRadio77">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio78" value="option5">
+      <label class="form-check-label" for="inlineRadio78">5</label>
+    </div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<p>For self-protection we should use weapons that incapacitate (tasers, tranquilizers) instead of guns that kill.</p>
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio104" value="option1">
-  <label class="form-check-label" for="inlineRadio104">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio105" value="option2">
-  <label class="form-check-label" for="inlineRadio105">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio106" value="option3">
-  <label class="form-check-label" for="inlineRadio106">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio107" value="option4">
-  <label class="form-check-label" for="inlineRadio107">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio108" value="option5">
-  <label class="form-check-label" for="inlineRadio108">5</label>
-</div>
+    <p>It's extreme hyprocisy to be a vegan and have an "on demand" lifestyle-dictated abortion</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio79" value="option1">
+      <label class="form-check-label" for="inlineRadio79">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio80" value="option2">
+      <label class="form-check-label" for="inlineRadio80">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio81" value="option3">
+      <label class="form-check-label" for="inlineRadio81">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio82" value="option4">
+      <label class="form-check-label" for="inlineRadio82">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio83" value="option5">
+      <label class="form-check-label" for="inlineRadio83">5</label>
+    </div>
 
-<br>
-  <button type="submit" class="btn btn-primary" style="float:right">Submit</button>
+    <br>
+    <br>
 
-  <br><br>
+    <p>I think that it is perfectly acceptable for parents to refuse to fund their child's college education if the child's intended major (or grades) will not lead to employment.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio84" value="option1">
+      <label class="form-check-label" for="inlineRadio84">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio85" value="option2">
+      <label class="form-check-label" for="inlineRadio85">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio86" value="option3">
+      <label class="form-check-label" for="inlineRadio86">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio87" value="option4">
+      <label class="form-check-label" for="inlineRadio87">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio88" value="option5">
+      <label class="form-check-label" for="inlineRadio88">5</label>
+    </div>
 
-</form>
-<!-- Content here -->
+    <br>
+    <br>
+
+    <p>I'm a conservative that praises the 2nd amendment, but I believe wholeheartedly that background checks are a great idea to prevent mass shootings and slow the gun-related violence rate.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio89" value="option1">
+      <label class="form-check-label" for="inlineRadio89">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio90" value="option2">
+      <label class="form-check-label" for="inlineRadio90">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio91" value="option3">
+      <label class="form-check-label" for="inlineRadio91">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio92" value="option4">
+      <label class="form-check-label" for="inlineRadio92">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio93" value="option5">
+      <label class="form-check-label" for="inlineRadio93">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>The iPhone keyboard/texting is hands down better than Android.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio94" value="option1">
+      <label class="form-check-label" for="inlineRadio94">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio95" value="option2">
+      <label class="form-check-label" for="inlineRadio95">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio96" value="option3">
+      <label class="form-check-label" for="inlineRadio96">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio97" value="option4">
+      <label class="form-check-label" for="inlineRadio97">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio98" value="option5">
+      <label class="form-check-label" for="inlineRadio98">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>There is nothing morally wrong with building a wall to keep out potential illegal immigrants</p>
+    <div class="form-check form-check-inline">
+
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio99" value="option1">
+      <label class="form-check-label" for="inlineRadio99">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio100" value="option2">
+      <label class="form-check-label" for="inlineRadio100">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio101" value="option3">
+      <label class="form-check-label" for="inlineRadio101">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio102" value="option4">
+      <label class="form-check-label" for="inlineRadio102">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio103" value="option5">
+      <label class="form-check-label" for="inlineRadio103">5</label>
+    </div>
+
+    <br>
+    <br>
+
+    <p>For self-protection we should use weapons that incapacitate (tasers, tranquilizers) instead of guns that kill.</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio104" value="option1">
+      <label class="form-check-label" for="inlineRadio104">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio105" value="option2">
+      <label class="form-check-label" for="inlineRadio105">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio106" value="option3">
+      <label class="form-check-label" for="inlineRadio106">3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio107" value="option4">
+      <label class="form-check-label" for="inlineRadio107">4</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio108" value="option5">
+      <label class="form-check-label" for="inlineRadio108">5</label>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary" style="float:right">Submit</button>
+
+    <br><br>
+
+  </form>
+  <!-- Content here -->
 </div>
 
 </div>
