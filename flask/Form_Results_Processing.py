@@ -60,7 +60,7 @@ edu+=int(form_data_list['edu4'].pop()[6])
 # In[4]:
 
 
-user_lean={"immigration":int(round(immi/4)), "shooting":int(round(gun/4)), "abortion":int(round(abort/4)), "immigration":int(round(immi/4)), "shooting":int(round(gun/4)), "android":int(round(andd/4)),"education":int(round(edu/4))}
+user_lean={"immigration": immi/4, "shooting": gun/4, "abortion": abort/4, "immigration": immi/4, "shooting": gun/4, "android": andd/4,"education": edu/4}
 
 
 # In[5]:
@@ -73,7 +73,8 @@ print(user_lean)
 
 
 # PICKLE CODE IF U WANT
-fileObject = open("user_lean.pickle",'wb') 
-pickle.dump(user_lean,fileObject)   
-fileObject.close()
+
+# fileObject = open("user_lean.pickle",'wb') 
+# pickle.dump(user_lean,fileObject)   
+# fileObject.close()
 
