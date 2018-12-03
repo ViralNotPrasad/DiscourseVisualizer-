@@ -27,10 +27,12 @@ def main():
     bodies = d["body"]
     scores = d["score"]
     comments = d["comments"]
+    comms_num = d["comms_num"]
+    created = d["created"]
     # print (classify_opinion.get_keywords(bodies[:5]))
-    topics = {"abortion":[], "immigration":[], "shooting":[], "android":[],"other":[]}
-    topics_pro = {"abortion":[], "immigration":[], "shooting":[], "android":[],"other":[]}
-    topics_anti = {"abortion":[], "immigration":[], "shooting":[], "android":[],"other":[]}
+    topics = {"abortion":[], "immigration":[], "shooting":[], "android":[],"education":[],"other":[]}
+    # topics_pro = {"abortion":[], "immigration":[], "shooting":[], "android":[],"other":[]}
+    # topics_anti = {"abortion":[], "immigration":[], "shooting":[], "android":[],"other":[]}
     process_bodies(bodies)
     titles_tok = tokenize(titles)
     bodies_tok = tokenize(bodies)
@@ -40,15 +42,19 @@ def main():
     shooting = ["gunman", "shooting", "gun", "armed", "firearm", "shootings"]
     abortion = ["baby", "fetus", "abort", "abortion", "trimester", "pregnant", "pregnancy"]
     android = ["android","ios","phone","smartphone","apple"]
+    education = ["university", "college", "student", "debt", "loan", "education"]
     # queries = expand_queries(immigration) # function to see which keywords to manually add to the list
 
-    vectorizer_immi = TfidfVectorizer(vocabulary=immigration, ngram_range=(1,1), smooth_idf=True)
+    vectorizer_immi = TfidfVectorizer(vocabulary=immigration, ngram_range=(1,1))
     vectorizer_shoot = TfidfVectorizer(vocabulary=shooting, ngram_range=(1,1))
     vectorizer_abort = TfidfVectorizer(vocabulary=abortion, ngram_range=(1,1))
     vectorizer_android = TfidfVectorizer(vocabulary=android, ngram_range=(1,1))
+    vectorizer_education = TfidfVectorizer(vocabulary=education, ngram_range=(1,1))
 
-    vectorizer_dict = {"immigration": vectorizer_immi, "abortion": vectorizer_abort, "shooting": vectorizer_shoot, "android": vectorizer_android}
-    matrix_dict = {"abortion":None, "immigration":None ,"shooting":None, "android":None,"other":None}
+    matrix_dict = {"abortion":None, "immigration":None ,"shooting":None, "android":None,"education":None,"other":None}
+    vectorizer_dict = {"immigration": vectorizer_immi, "abortion": vectorizer_abort, "shooting": vectorizer_shoot, "android": vectorizer_android, "education":vectorizer_education}
+    # comment out next line to run for all topics
+    # vectorizer_dict = {"education":vectorizer_education}
 
     for key in vectorizer_dict:
         matrix_dict[key] = vectorizer_dict[key].fit_transform(corpus).toarray()
@@ -66,30 +72,19 @@ def main():
 
         topics[category].append((i, score))
 
-    for key in topics:
+    for key in vectorizer_dict:
         topics[key].sort(key=lambda x : x[1], reverse=True)
         topics[key] = [elem[0] for elem in topics[key]]
 
-    for i in topics["immigration"]:
-        print(titles[i])
-    print("---------------")
-    for i in topics["android"]:
-        print(titles[i])
-    print("---------------")
-    for i in topics["abortion"]:
-        print(titles[i])
-    return
+    # for i in topics["shooting"]:
+    #     print(titles[i])
+    # print("---------------")
+    # for i in topics["education"]:
+    #     print(titles[i])
 
-
-    for i in topics["abortion"]:
-        print(titles[i]+bodies[i])
-        classify_opinion.get_keywords(titles[i]+bodies[i])
-
-    for topic in topics.keys():
-        print(topic, len(topics[topic]))
-
-    # print_polarity("android", topics, titles, bodies, topics_pro, topics_anti)
-
+    finaldict = {"ids" : ids, "titles":titles, "bodies":bodies , "scores":scores, "comments":comments, "topics":topics, "comms_num":comms_num, "created":created}
+    with open("finaldict.pickle", "wb") as f:
+        pickle.dump(finaldict, f)
     return
 
 def expand_queries(queries):
@@ -105,11 +100,7 @@ def find_synonyms(word):
 
     return synonyms
 
-
-
-def tfidf_retrieve(query, doc):
-    pass
-
+# experiments with sentiment analysis
 def find_sentiment(text):
     return classify_opinion.get_opinion(text)
 
@@ -143,7 +134,7 @@ def tokenize(text):
 
     return text_tok
 
-
+#binary categorization
 def categorize_data(l):
     immigration = set(["immigration", "deport", "undocumented", "immigrant", "alien", "refugee"])
     shooting = set(["gunman", "shooting", "shot", "gun", "armed", "violence", "shoot", "firearm"])
@@ -195,7 +186,7 @@ def print_dict(d):
 
     return
 
-
+#lemmatization code
 def get_lemma(word):
     lemma = wn.morphy(word)
     if lemma is None:
@@ -203,9 +194,6 @@ def get_lemma(word):
     else:
         return lemma
 
-
-def find_related_words(word):
-    pass
 
 
 if __name__ == '__main__':
