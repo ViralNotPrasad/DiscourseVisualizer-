@@ -160,11 +160,11 @@ def home():
     comments = []
     labels = []
     topics = []
+    topic_leans = []
 
     for topic in topicset:
         i = 0
         lcount = 0
-        topic_leans = []
         for idx in datadict["topics"][topic]:
             label = datadict["labels"][topic][i]
             i+=1
@@ -181,6 +181,7 @@ def home():
 
             if lcount == 5:
                 break;
+    print(topic_leans)
     timecheck("delta", current_topic_time, current_label_time, current_tot_post_len)
     return render_template(
         'feed.html', l=len(titles), labels=labels, topics=topics, titles=titles, bodies=bodies, comments=comments, topic_leans=topic_leans)
