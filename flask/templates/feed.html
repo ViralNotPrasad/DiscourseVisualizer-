@@ -24,7 +24,7 @@
                 <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://goo.gl/forms/yCyHS66ilLNk12Xv2">Exit Survey</a>
+                <a class="nav-link" href="{{ url_for('exit') }}">Exit Survey</a>
             </li>
         </ul>
     </div>
@@ -34,7 +34,7 @@
     {% for p in range(l) %}
     <div class="container">
         <div class="row">
-            {% if labels[p] > 0 and labels[p] > 3 %}
+            {% if topic_leans[p] > 3 %}
             <div class="col-sm-6">
                 <div class="card" style="min-height:16rem; max-height:16rem;">
                     <div class="card-body">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            {% elif labels[p] < 3 %}
+            {% elif topic_leans[p] < 3 and topic_leans[p] > 0 %}
             <div class="col-sm-6">
                 <div class="card text-white bg-secondary" style="min-height:16rem; max-height:16rem;">
                     <div class="card-body">
