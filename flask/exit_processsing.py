@@ -30,7 +30,6 @@
 
 # In[30]:
 
-#NEED EXCEL SHEET IN THE SAME  FOLDER
 
 def excel(exit):
     immi=0
