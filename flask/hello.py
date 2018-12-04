@@ -197,7 +197,7 @@ def exit():
     dict_tup = (form_dict,obs_dict)
     with open("dict_tup.pickle", "wb") as f:
         pickle.dump(dict_tup, f)
-    return redirect("https://goo.gl/forms/yCyHS66ilLNk12Xv2")
+    return redirect("https://goo.gl/forms/e6BWfXFXfpWki7az1")
 
 def timecheck(action, topic=None, label=None, postlen=None):
     global timelist
