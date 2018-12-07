@@ -21,6 +21,10 @@ def main():
     with open("data_1-15-43.pickle", "rb") as data:
         d = pickle.load(data)
 
+    # Uncomment lines below if you want to collect data from the PRAW top 5000 posts
+    # with open("data_1-3-18.pickle", "rb") as data:
+    #     d = pickle.load(data)
+
     ids = d["id"]
     titles = d["title"]
     titles = [elem.strip("CMV:").strip() for elem in titles]

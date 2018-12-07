@@ -37,7 +37,7 @@ to start the server on the localhost
 * flask/app.py - Main logic of the front end flask web application,
 which handles routing, loading data from pickled dictionary *finaldict.pickle*, time logging, 
 and data collection about user clicks, etc.
-
+* Form_Results_Processing.ipynb - processes the results of the form
 * flask/templates/* - Contains the html code for the pages
 
 * flask/static/* - contains the static images, and the css files
@@ -59,4 +59,5 @@ analysts, etc. (not used in project, as classification is done manually)
 * flask/analytics.py - Generates corpus level statistics about the data collected, along with relevance labels
 * flask/exit_processing.py - Conducts analytics on the time/interaction data which was collected
 during the user interaction phase, and the entry form results (stored as form_result.pickle).
+* plots.ipynb - code to generate the plots from the data
 
