@@ -23,7 +23,7 @@
 
 
 # import pickle
-# with open("dict_tup.pickle","rb") as f:
+# with open("pronnoy.pickle","rb") as f:
 #     d_t_pickle = pickle.load(f)
 # print(d_t_pickle)
 
@@ -97,7 +97,7 @@ def main():
     print(exit)
     
     import pickle
-    with open("dict_tup.pickle","rb") as f:
+    with open("pronnoy.pickle","rb") as f:
         d_t_pickle = [pickle.load(f)]
     print(d_t_pickle)
     
