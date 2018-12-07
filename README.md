@@ -49,7 +49,9 @@ in *Winning Arguments: Interaction Dynamics and Persuasion Strategies in Good-fa
 Chenhao Tan, Vlad Niculae, Cristian Danescu-Niculescu-Mizil, Lillian Lee.*
 Dataset available at https://chenhaot.com/pages/changemyview.html
 
-*(Note: Datasets will be stored as data\_(current day)\_(current hour)\_(current minute).pickle) according to the time that they are generated*
+*(Note: On running either collect_data.py or process_data.py, datasets will be stored as data\_(current day)\_(current hour)\_(current minute).pickle according to the time that they are generated. On running segregate_data.py, finaldict.py will be generated with the processed data used by flask)*
+
+**To download previously collected data which is stored as pickle, please visit [this link](https://drive.google.com/open?id=1l1uL9mV259yjn6gzajkcWxM2pCAa7K3R) and put the downloaded file in the main folder**
 
 ### Data processing - 
 * segregate_data.py - Provides the bulk of the data processing functionality. 
